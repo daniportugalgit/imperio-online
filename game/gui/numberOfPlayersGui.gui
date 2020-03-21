@@ -1,0 +1,78 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(numberOfPlayersGui) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl(serverPlayersGui_img) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "414 247";
+      Extent = "205 187";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/QUANTOSPLAYERS.png";
+      wrap = "0";
+
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Profile = "GuiTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "45 73";
+         Extent = "33 33";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "serverCriarJogoPara(2);";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/data/images/DOIS";
+      };
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Profile = "GuiTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "85 73";
+         Extent = "33 33";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "serverCriarJogoPara(3);";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/data/images/tres";
+      };
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Profile = "GuiTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "125 73";
+         Extent = "33 33";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "serverCriarJogoPara(4);";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "~/data/images/quatro";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

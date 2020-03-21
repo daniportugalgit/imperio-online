@@ -1,0 +1,95 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(venderGui) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapButtonCtrl(venderMinerio_btn) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "454 629";
+      Extent = "36 37";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      Command = "clientAskVenderMinerio();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = "~/data/images/minerio";
+   };
+   new GuiBitmapButtonCtrl(venderPetroleo_btn) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "494 629";
+      Extent = "36 37";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      Command = "clientAskVenderPetroleo();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = "~/data/images/petroleo";
+   };
+   new GuiBitmapButtonCtrl(venderUranio_btn) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "534 629";
+      Extent = "36 37";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      Command = "clientAskVenderUranio();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = "~/data/images/uranio";
+   };
+   new GuiBitmapButtonCtrl(cancelarVenda_btn) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "475 590";
+      Extent = "75 37";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      Command = "clientCancelVenderGui();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = "~/data/images/cancelar";
+   };
+   new GuiBitmapButtonCtrl(venderConjunto_btn) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "472 666";
+      Extent = "80 35";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      Command = "clientAskVenderConjunto();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = "~/data/images/conjunto";
+   };
+};
+//--- OBJECT WRITE END ---

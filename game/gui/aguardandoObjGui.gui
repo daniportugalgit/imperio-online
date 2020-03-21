@@ -1,0 +1,64 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(aguardandoObjGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "125 417";
+      Extent = "775 91";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/Aguardando.png";
+      wrap = "0";
+
+      new GuiTextCtrl(aguardandoTXT) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais17CENTERProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "281 63";
+         Extent = "213 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Loki esta jogando";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(firstStartTimer_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais16CENTERProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "476 64";
+         Extent = "28 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         tooltipprofile = "ImperiaisToolTipProfile";
+         ToolTip = "Tempo restante para a escolha";
+         hovertime = "100";
+         text = "59";
+         maxLength = "1024";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

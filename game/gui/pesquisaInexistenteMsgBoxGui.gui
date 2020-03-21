@@ -1,0 +1,51 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(MsgBoxPesquisaInexistenteGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "ImperiaisTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "378 310";
+      Extent = "268 145";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      tooltipprofile = "GuiDefaultProfile";
+      hovertime = "1000";
+      bitmap = "~/data/images/MsgBoxPesquisaInexistente.png";
+      wrap = "0";
+
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "ImperiaisTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "63 94";
+         Extent = "141 31";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "clientPesquisaInexistenteOkBtnClick();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         bitmap = "~/data/images/OK_BTN";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

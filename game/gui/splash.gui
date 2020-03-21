@@ -1,0 +1,18 @@
+new GuiFadeinBitmapCtrl(splashGUI) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   bitmap = "";
+   wrap = "0";
+   fadeinTime = "2000";
+   waitTime = "3000";
+   fadeoutTime = "2000";
+   done = "1";
+};

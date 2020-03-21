@@ -1,0 +1,122 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(tutHudGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiBlackContentProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl(tutHud) {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "ImperiaisTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "407 222";
+      Extent = "270 92";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/tutorial/tutMiniHud.png";
+      wrap = "0";
+
+      new GuiTextCtrl(tutGuiLinha4_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais_14_Center";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "86 68";
+         Extent = "171 10";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "podem ser selecionadas.";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(tutGuiLinha3_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais_14_Center";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "86 55";
+         Extent = "171 10";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Todas as peças da sua cor";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(tutGuiLinha2_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais_14_Center";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "86 42";
+         Extent = "171 10";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "para seleciona-lo.";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(tutGuiLinha1_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Imperiais_14_Center";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "86 29";
+         Extent = "171 10";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Clique neste soldado";
+         maxLength = "1024";
+      };
+      new GuiBitmapCtrl(tutGuiIcon) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "ImperiaisTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "27 19";
+         Extent = "34 55";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         bitmap = "~/data/images/tutorial/tutMouseIcon.png";
+         wrap = "0";
+      };
+      new GuiTextCtrl(tutGuiTitle_txt) {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "Formal436BT_16_Center";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "81 8";
+         Extent = "156 10";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "SELECIONANDO PEÇAS";
+         maxLength = "1024";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

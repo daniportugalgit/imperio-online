@@ -1,0 +1,31 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(renderTodosMsgBoxGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "GuiTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "378 562";
+      Extent = "268 145";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/MsgBoxRenderTodos.png";
+      wrap = "0";
+   };
+};
+//--- OBJECT WRITE END ---

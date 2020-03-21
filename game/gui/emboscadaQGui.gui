@@ -1,0 +1,68 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(emboscadaQGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "ImperiaisTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "404 286";
+      Extent = "215 195";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/MsgBoxEmboscada.png";
+      wrap = "0";
+
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "ImperiaisTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "18 152";
+         Extent = "84 27";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "clientPopEmboscadaQGui();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         bitmap = "~/data/images/MsgBoxNaoBtn";
+      };
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "ImperiaisTransparentProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         Position = "114 152";
+         Extent = "84 27";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "clientConfirmarEmboscada();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         bitmap = "~/data/images/MsgBoxSimBtn";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

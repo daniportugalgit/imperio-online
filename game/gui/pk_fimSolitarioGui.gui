@@ -1,0 +1,95 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(pk_fimSolitarioGui) {
+   canSaveDynamicFields = "0";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   Position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "0 0";
+      Extent = "1024 768";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/dummyBlack80.png";
+      wrap = "0";
+   };
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "ImperiaisTransparentProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "419 253";
+      Extent = "215 195";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "~/data/images/pk/poker_fimDeJogoMsgBox.png";
+      wrap = "0";
+
+      new GuiBitmapButtonCtrl() {
+         canSaveDynamicFields = "0";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "17 152";
+         Extent = "181 27";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "clientPk_askVoltarPraSala();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         bitmap = "~/data/images/pk/poker_voltarPraSala_btn";
+      };
+   };
+   new GuiTextCtrl(pk_fimSolitario_nome_txt) {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "ImperiaisMEDIUMProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "437 300";
+      Extent = "180 29";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "God_of_WaR";
+      maxLength = "1024";
+   };
+   new GuiTextCtrl(pk_fimSolitario_pot_txt) {
+      canSaveDynamicFields = "0";
+      isContainer = "0";
+      Profile = "Imperiais17LEFT_HiProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      Position = "534 374";
+      Extent = "51 29";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "45";
+      maxLength = "1024";
+   };
+};
+//--- OBJECT WRITE END ---

@@ -1,0 +1,211 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiWindowCtrl(chatGui) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiWindowProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   text = "Torque Game Builder Chat - Turn Based Network Test";
+   maxLength = "255";
+   resizeWidth = "1";
+   resizeHeight = "1";
+   canMove = "1";
+   canClose = "0";
+   canMinimize = "0";
+   canMaximize = "0";
+   minSize = "50 50";
+
+   new GuiTextEditCtrl(chatEditText2) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiTextEditProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "7 276";
+      Extent = "340 18";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      maxLength = "255";
+      historySize = "0";
+      password = "0";
+      tabComplete = "0";
+      sinkAllKeyEvents = "0";
+      password = "0";
+      passwordMask = "*";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "348 276";
+      Extent = "67 18";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      Command = "chatGui.send();";
+      Accelerator = "return";
+      hovertime = "1000";
+      text = "Enviar";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   new GuiScrollCtrl(chatTextScroll2) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiScrollProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "6 25";
+      Extent = "409 251";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOn";
+      vScrollBar = "alwaysOn";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiMessageVectorCtrl(chatMessageText2) {
+         canSaveDynamicFields = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "2 2";
+         Extent = "387 228";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "0";
+         lineContinuedIndex = "10";
+         matchColor = "0 0 255 255";
+         maxColorIndex = "9";
+      };
+   };
+   new GuiScrollCtrl(chatClientScroll) {
+      canSaveDynamicFields = "0";
+      Profile = "GuiScrollProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "419 25";
+      Extent = "84 251";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiTextListCtrl(chatClientList) {
+         canSaveDynamicFields = "0";
+         Profile = "GuiTextListProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "2 2";
+         Extent = "80 2";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         enumerate = "0";
+         resizeCell = "1";
+         columns = "0";
+         fitParentWidth = "1";
+         clipColumnText = "0";
+      };
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "4 281";
+      Extent = "69 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      Command = "chatGui.quit();";
+      Accelerator = "escape";
+      hovertime = "1000";
+      text = "Quit";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+};
+//--- OBJECT WRITE END ---
+
+function chatGui::onWake(%this)
+{
+   if(isObject(chatVectorText))
+   {
+      chatMessageText.detach();
+      chatVectorText.delete();
+   }
+
+   new MessageVector(chatVectorText){};
+   chatMessageText.attach(chatVectorText);
+   
+   chatVectorText.clear();
+   
+   chatClientList.clear();
+
+   echo("getting clients");
+
+   %this.getClients(); 
+   commandToServer('isChatting');
+}
+
+function chatGui::onSleep(%this)
+{   
+   if(serverData.local)
+   { 
+      //If we are the server we want to send "chatClosed" to the client to close out their chats
+      sendChatClosed();
+   } else
+   {
+      //Tell the server we left the chat  
+      commandToServer('leftChat');
+   }
+}
+
+function chatGui::send(%this)
+{
+   %text = chatEditText.getValue();
+   commandToServer('updateChatText', %text);
+   chatEditText.setValue("");
+}
+
+function chatGui::getClients(%this)
+{
+   $waitingForList = true;
+   commandToServer('getChatConnectionList');
+
+}
+
+function chatGui::onGetList(%this)
+{
+   $waitingForList = false;
+   %count = $clientChatConnectionCount;
+
+   for(%i=0;%i<%count;%i++)
+   {
+      clientCmdupdateChatClient($clientChatNamesList.contents[%i]);    
+
+   }
+}
+
+function chatGui::quit(%this)
+{
+   Canvas.popDialog(ChatGui);
+}
