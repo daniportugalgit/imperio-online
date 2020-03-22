@@ -9,6 +9,6 @@ App.get('/', (req, res) => {
 App.use(express.json());
 App.use(require('./routes'));
 
-App.listen(3000, () => {
+App.listen(80, () => {
     console.log("Server is up!");
 });
