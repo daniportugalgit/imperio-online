@@ -1,3 +1,4 @@
+
 function onClientConnected(%client)
 {
    
@@ -5,7 +6,7 @@ function onClientConnected(%client)
 
 function onServerCreated()
 {
-   
+   echo("CHAT SERVER: onServerCreated (WRONG! You must config $IAmServer in the IDE!)");
 }
 
 function onServerDestroyed()

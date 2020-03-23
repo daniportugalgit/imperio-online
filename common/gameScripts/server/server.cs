@@ -11,7 +11,7 @@ $serverCreated = false;
 function createServer(%displayOnMaster)
 {
    // Destroy a potentially already created server.
-   destroyServer();
+   destroyServer(); 
 
    // Make sure the network port is set correctly.
    %failCount = 0;
@@ -26,9 +26,9 @@ function createServer(%displayOnMaster)
    allowConnections(true);
    if (%displayOnMaster)
       schedule(0, 0, startHeartbeat);
-      
-   onServerCreated();
    
+   onServerCreated();
+      
    %conn = new GameConnection(ServerConnection);
    %conn.setConnectArgs($pref::Player::name);
    %conn.connectLocal();
