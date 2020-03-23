@@ -13,7 +13,8 @@
 // ============================================================
 //$debugMaster=true; //estou debugando
 function devOn(){
-	$enderecoTaxo= "dev.projetoimperio.com";	
+	$enderecoTaxo
+	= "dev.projetoimperio.com";	
 }
 
 function devOff(){
