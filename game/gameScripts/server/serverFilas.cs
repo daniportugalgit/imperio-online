@@ -15,6 +15,7 @@
 
 function initFilaSys()
 {
+	echo("initFilaSys()");
 	$filaSysNum++;
 
 	$filas_handler = newSimObj("filas_handler", $filaSysNum);
@@ -82,6 +83,7 @@ function filas_handler::executarProxima(%this)
 
 function filas_handler::executar(%this, %filaObj)
 {
+	echo("filas_handler::executar()");
 	if($servidorEnviandoDados)
 		return;
 		
@@ -114,6 +116,7 @@ function filas_handler::executar(%this, %filaObj)
 
 function filas_handler::newFilaObj(%this, %tipo, %url, %prioridade, %obj_rel, %obj2_rel)
 {
+	echo("filas_handler::newFilaObj");
 	$filaObjNum++;
 
 	%newFilaObj = new ScriptObject(){};
@@ -136,6 +139,8 @@ function filas_handler::newFilaObj(%this, %tipo, %url, %prioridade, %obj_rel, %o
 //Básico:
 function serverEnviarDadosDaFila(%filaObj)
 {
+	echo("serverEnviarDadosDaFila()");
+
 	$servidorEnviandoDados = true;
 	new TCPObject(tcpObjGet);
 	$serverURL = %filaObj.url;
@@ -146,6 +151,7 @@ function serverEnviarDadosDaFila(%filaObj)
 
 function serverPermitirEnvio()
 {
+	echo("serverPermitirEnvio()");
 	$servidorEnviandoDados = false;
 	$filas_handler.executarProxima();
 }
@@ -163,6 +169,7 @@ function serverStarEnviandoDadosTimer()
 //////////////
 //Login:
 function verificarLogin(%filaObj){
+	echo("verificarLogin()");
 	%user = %filaObj.obj_rel;
 	if(%user.personasCount == -2)
 	{

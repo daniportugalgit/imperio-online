@@ -28,11 +28,11 @@ function tcpObjGet::onConnected(%this){
 }
 
 function tcpObjGet::onLine(%this, %dados){
+	echo("**tcpObjGet::onLine");
 	if (getWord(%dados, 0) $= "imagem"){ 
 		echo("DADOS(RAW) DA FOTO RECEBIDOS: " @ %dados);
 		gravarMinhaFoto(%dados);
 	}
-	
 }
 
 function gravarMinhaFoto(%dados){

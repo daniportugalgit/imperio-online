@@ -30,6 +30,8 @@ function serverCmdNOTdebugMaster(){
 
 
 function getEnderecoTaxo(){
+	echo("**getEnderecoTaxo()");
+
 	%file = new FileObject();
 	
 	/*
@@ -46,7 +48,12 @@ function getEnderecoTaxo(){
 	$enderecoTaxo = "www.projetoimperio.com";
 }
 
+function justATest() {
+	echo("this is just a test!");
+}
+
 function onServerCreated(){
+	echo("******* On Server Created()");
 	$connectionNum = 0;
 	if($IAmServer){
 		%arquivo = "game/data/levels/terra.t2d";
@@ -58,6 +65,8 @@ function onServerCreated(){
 }
 ///////////
 function GameConnection::onConnect(%client, %name, %senha, %versao){
+	echo("***GameConnection::onConnect()");
+
    // Send down the connection error info. The client is responsible for displaying this
    // message if a connection error occures.
    commandToClient(%client, 'SetConnectionError', $Pref::Server::ConnectionError);
@@ -65,7 +74,7 @@ function GameConnection::onConnect(%client, %name, %senha, %versao){
    %client.setPlayerName(%name);
    %client.senha = %senha;
    %client.versao = %versao;
-   echo("Client Connected: " @ %client @ " " @ %client.getAddress());
+   echo("**Client Connected: " @ %client @ " " @ %client.getAddress());
 	$Server::PlayerCount++;
     onClientConnected(%client);
 }
@@ -73,6 +82,7 @@ function GameConnection::onConnect(%client, %name, %senha, %versao){
 //onConnected refactory2:
 function onClientConnected(%client){
 	if($connectionNum == 0){
+		echo("CONNECTION ZERO ESTABILSHED: the server is connected!");
 		$serverConnection = %client;
 		$connectionNum = 1;
 		Canvas.popDialog(clientStartGui); //apaga o hud de Login;
@@ -91,6 +101,7 @@ function onClientConnected(%client){
 		criarPlaneta("Teluria", 10, 73, 45, 3, 4); //%nome, %desastres, %infos, %objs, %id;
 		schedule(5000, 0, "stopHeartBeat"); //pára de ficar enviando msgns pro master server da garage games
 	} else {
+		echo("New player connected!");
 		registrarUsuario(%client, %client.name, %client.senha, %client.versao);
 		$connectionNum++;	
 	} 
@@ -107,6 +118,8 @@ function registrarUsuario(%client, %login, %senha, %versao){
 			%user.delete();
 		}
 	}
+
+	echo("Registrando login para username " @ %login @ " e senha " @ %senha @ " e versão " @ %versao);
 	
 	%eval = "$USER" @ %login @ " = new ScriptObject(){";
 	%eval = %eval @ "login = %login;";
@@ -137,6 +150,7 @@ function registrarUsuario(%client, %login, %senha, %versao){
 
 //Esta função é chamada autoamticamente quando acaba de receber a resposta do taxo refente ao login solicitado
 function verificarTaxoLogin(%user){
+	echo("verificarTaxoLogin()");
 	if(%user.personasCount == -1)
 	{
 		echo("Usuário não encontrado no banco de dados!! Desconectando client...feito!");
