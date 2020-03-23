@@ -8,23 +8,21 @@ class UserRepository {
 			guloks:false,
 			personas:[{
 				id:99,
-				nome:"Loki",
-				jogos:0,
-				pontos:0,
-				visionario:0,
+				name:"Loki",
+				games:0,
+				victories: 0,
+				points:0,
+				visionary:0,
 				arrebatador:0,
-				comerciante:0,
-				atacou:0,
-				creditos:0,
-				b_tutorial:0,
-				especie:"humano",
-				pk_fichas:0,
-				pk_vitorias:0,
-				pk_power_plays:0
+				trader:0,
+				attacked:0,
+				credits:0,
+				tutorial: false,
+				species:"humano"
 			}]
 		}
 	}
 }
 
-module.exports = UserRepository
+module.exports = new UserRepository()
 
