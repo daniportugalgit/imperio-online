@@ -16,7 +16,7 @@ module.exports = {
     		zeroes += "0 "
     	}
 
-    	zeroes += "0"; //the 61th zero;
+    	zeroes += "0"; //the 61st zero;
 
     	res.send("dadosAcademia dani " + zeroes);
     }
