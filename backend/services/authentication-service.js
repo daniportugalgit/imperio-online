@@ -10,6 +10,7 @@ class AuthenticationService {
 		if (user.password != password)
 			return null
 
+		user.password = null
 		return user
 	}
 }

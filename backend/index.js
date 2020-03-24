@@ -1,4 +1,6 @@
 const express = require('express');
+
+const config = require('./config');
   
 const app = express();
 
@@ -9,6 +11,6 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use('/torque', require('./torque')); 
 
-app.listen(80, () => {
+app.listen(config.server.port, () => {
     console.log("Server is up!");
 });

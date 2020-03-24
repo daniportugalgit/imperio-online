@@ -8,13 +8,11 @@ module.exports = {
         port: env.read('IMPERIO_SERVER_LISTEN_PORT')
     },
     database: {
-        name: 'imperio',
         host: env.read('IMPERIO_DATABASE_HOST'),
         database: env.read('IMPERIO_DATABASE_NAME'),
         username: env.read('IMPERIO_DATABASE_USER'),
         password: env.read('IMPERIO_DATABASE_PASSWORD'),
         logging: env.read('IMPERIO_DATABASE_CONSOLE_OUTPUT') === 'false' ? false : console.log,
-        operatorsAliases: false,
         dialect: 'mysql'       
     }
 };
