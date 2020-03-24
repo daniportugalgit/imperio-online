@@ -3,7 +3,7 @@ const router = express.Router();
 
 const async = require('../../utils/async');
 const authenticationService = require("../../services/authentication-service")
-const taxoAdapter = require("../../adapters/taxo-adapter")
+const taxoAdapter = require("../../services/taxo-adapter")
 
 router.get('/:username/:password',  
     async.handler(async (req, res) => {

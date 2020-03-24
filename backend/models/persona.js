@@ -21,11 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0
     },
-    victories: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
     points: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -62,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: false
     },     
     species: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "human"
     },                     

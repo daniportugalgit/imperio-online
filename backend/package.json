@@ -33,6 +33,7 @@
     "node": "12.13.0"
   },
   "devDependencies": {
+    "babel-register": "^6.26.0",
     "sequelize-cli": "^5.5.1"
   }
 }

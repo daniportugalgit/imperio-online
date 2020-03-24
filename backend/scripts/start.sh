@@ -1,0 +1,1 @@
+docker-compose up && npx sequelize-cli db:migrate && npm run prod
