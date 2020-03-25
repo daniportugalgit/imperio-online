@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     soldierDefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     soldierDefenseMax: {
       type: DataTypes.INTEGER,
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     soldierAttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     soldierAttackMax: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     tankDefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     tankDefenseMax: {
       type: DataTypes.INTEGER,
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     tankAttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     tankAttackMax: {
       type: DataTypes.INTEGER,
@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
     shipDefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     shipDefenseMax: {
       type: DataTypes.INTEGER,
@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
     shipAttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     shipAttackMax: {
       type: DataTypes.INTEGER,
@@ -67,7 +67,7 @@ module.exports = (sequelize, DataTypes) => {
     leader1DefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader1DefenseMax: {
       type: DataTypes.INTEGER,
@@ -77,7 +77,7 @@ module.exports = (sequelize, DataTypes) => {
     leader1AttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader1AttackMax: {
       type: DataTypes.INTEGER,
@@ -108,7 +108,7 @@ module.exports = (sequelize, DataTypes) => {
     leader2DefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader2DefenseMax: {
       type: DataTypes.INTEGER,
@@ -118,7 +118,7 @@ module.exports = (sequelize, DataTypes) => {
     leader2AttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader2AttackMax: {
       type: DataTypes.INTEGER,
@@ -128,7 +128,7 @@ module.exports = (sequelize, DataTypes) => {
     leader2Skill1: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader2Skill2: {
       type: DataTypes.INTEGER,
@@ -149,7 +149,7 @@ module.exports = (sequelize, DataTypes) => {
     leader3DefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader3DefenseMax: {
       type: DataTypes.INTEGER,
@@ -159,7 +159,7 @@ module.exports = (sequelize, DataTypes) => {
     leader3AttackMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 1,
     },
     leader3AttackMax: {
       type: DataTypes.INTEGER,
