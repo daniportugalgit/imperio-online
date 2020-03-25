@@ -6,14 +6,10 @@ services:
 
     environment:
       MYSQL_DATABASE: 'imperio'
-      MYSQL_USER: 'root'
+      MYSQL_USER: 'imperio'
       MYSQL_PASSWORD: 'imperiothisisaverysecretpassword'
       MYSQL_ROOT_PASSWORD: 'rootthisisaverysecretpassword'
     ports:
       - '3306:3306'
     expose:
       - '3306'
-    volumes:
-      - imperio-db:/var/lib/mysql
-volumes:
-  imperio-db:

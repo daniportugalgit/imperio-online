@@ -67,6 +67,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   Persona.associate = function(models) {
     this.belongsTo(models.user)
+    this.hasOne(models.academy)
   };
   return Persona;
 };
