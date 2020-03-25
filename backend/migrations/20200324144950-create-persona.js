@@ -10,7 +10,10 @@ module.exports = {
       },
       user_id: {
         type: Sequelize.DataTypes.INTEGER
-      },      
+      },
+      academy_id: {
+        type: Sequelize.DataTypes.INTEGER
+      },
       name: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
