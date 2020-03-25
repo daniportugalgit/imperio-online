@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Academy = sequelize.define('Academy', {
+  const Academy = sequelize.define('academy', {
     soldierDefenseMin: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -318,9 +318,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0,
     },
-  }, {});
-  Academy.associate = function(models) {
-    this.belongsTo(models.persona)
-  };
+  }, {
+    underscored: true,
+    timestamps: false,
+  });
+  
   return Academy;
 };
