@@ -323,5 +323,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   
-  return Academy;
+  return Academy
 };

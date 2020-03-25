@@ -8,187 +8,186 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER
       },
-      soldierDefenseMin: {
+      soldier_defense_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      soldierDefenseMax: {
+      soldier_defense_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 6,
       },
-      soldierAttackMin: {
+      soldier_attack_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      soldierAttackMax: {
+      soldier_attack_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 6,
       },
       
-      tankDefenseMin: {
+      tank_defense_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      tankDefenseMax: {
+      tank_defense_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      tankAttackMin: {
+      tank_attack_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      tankAttackMax: {
+      tank_attack_max: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 12,
+      },
+      ship_defense_min: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
+      ship_defense_max: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 12,
+      },
+      ship_attack_min: {
+        type: Sequelize.DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      },
+      ship_attack_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
   
-      shipDefenseMin: {
+      leader1_defense_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      shipDefenseMax: {
+      leader1_defense_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      shipAttackMin: {
+      leader1_attack_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      shipAttackMax: {
+      leader1_attack_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-  
-      leader1DefenseMin: {
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 1,
-      },
-      leader1DefenseMax: {
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 12,
-      },
-      leader1AttackMin: {
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 1,
-      },
-      leader1AttackMax: {
-        type: Sequelize.DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 12,
-      },
-      leader1Skill1: {
+      leader1_skill1: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader1Skill2: {
+      leader1_skill2: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader1Skill3: {
+      leader1_skill3: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader1Skill4: {
+      leader1_skill4: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
       
-      leader2DefenseMin: {
+      leader2_defense_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      leader2DefenseMax: {
+      leader2_defense_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      leader2AttackMin: {
+      leader2_attack_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      leader2AttackMax: {
+      leader2_attack_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      leader2Skill1: {
+      leader2_skill1: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader2Skill2: {
+      leader2_skill2: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader2Skill3: {
+      leader2_skill3: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader2Skill4: {
+      leader2_skill4: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
   
-      leader3DefenseMin: {
+      leader3_defense_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      leader3DefenseMax: {
+      leader3_defense_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      leader3AttackMin: {
+      leader3_attack_min: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1,
       },
-      leader3AttackMax: {
+      leader3_attack_max: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 12,
       },
-      leader3Skill1: {
+      leader3_skill1: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader3Skill2: {
+      leader3_skill2: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader3Skill3: {
+      leader3_skill3: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      leader3Skill4: {
+      leader3_skill4: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
@@ -263,27 +262,27 @@ module.exports = {
         defaultValue: 0,
       },
   
-      ongoingId: {
+      ongoing_id: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      ongoingOre: {
+      ongoing_ore: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      ongoingOil: {
+      ongoing_oil: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      ongoingUranium: {
+      ongoing_uranium: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
       },
-      ongoingLeader: {
+      ongoing_leader: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 0,
@@ -325,17 +324,9 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Academies');
+    return queryInterface.dropTable('Academies')
   }
 };
