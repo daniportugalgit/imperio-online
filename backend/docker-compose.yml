@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  db:
+    image: mysql
+    restart: always
+
+    environment:
+      MYSQL_DATABASE: 'imperio'
+      MYSQL_USER: 'imperio'
+      MYSQL_PASSWORD: 'imperiothisisaverysecretpassword'
+      MYSQL_ROOT_PASSWORD: 'rootthisisaverysecretpassword'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
