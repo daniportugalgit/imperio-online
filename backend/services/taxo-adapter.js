@@ -1,5 +1,23 @@
 class TaxoAdapter {
 
+    translateSpecies(species) {
+        const map = {
+            human: "humano",
+            gulok: "gulok"
+        }
+
+        return map[species]
+    }
+
+    translateEspecie(especie) {
+        const map = {
+            human: "human",
+            gulok: "gulok"
+        }
+
+        return map[especie]
+    }
+
     adaptLogin(user) {
 
         const personas = user.personas || []
@@ -10,11 +28,6 @@ class TaxoAdapter {
             omnis: user.omnis,
             conhece_g: user.guloks ? "1" : "0",
             qtde_personas: personas.length,
-        }
-
-        const species = {
-            human: "humano",
-            gulok: "gulok"
         }
 
         personas.forEach((p, i) => {
@@ -31,7 +44,7 @@ class TaxoAdapter {
             login["atacou"+c] = p.attacked
             login["creditos"+c] = p.credits
             login["b_tutorial"+c] = p.tutorial  ? "1" : "0"
-            login["especie"+c] = species[p.species]
+            login["especie"+c] = this.translateSpecies[p.species]
             login["pk_fichas"+c] = 0
             login["pk_vitorias"+c] = 0
             login["pk_power_plays"+c] = 0

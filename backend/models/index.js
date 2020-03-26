@@ -1,9 +1,9 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const config = require('../config');
-const Sequelize = require('sequelize');
+const fs = require('fs')
+const path = require('path')
+const config = require('../config')
+const Sequelize = require('sequelize')
 
 class Models {
   static getDB() {
@@ -30,6 +30,10 @@ class Models {
     db.Sequelize = Sequelize;    
     return db;
   }
+
+
 }
 
 module.exports = Models.getDB();
+
+

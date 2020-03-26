@@ -1,3 +1,5 @@
+JsonField = require('sequelize-json'),
+
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Game = sequelize.define('game', {
@@ -7,23 +9,25 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    user_id: {
+    participations: JsonField(sequelize, 'game', 'participations'),
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    room_name: {
+    roomName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    finishedAt: {
-      type: DataTypes.DATE,
-      allowNull: false
+    started_at: {
+      type: DataTypes.DATE
+    },
+    finished_at: {
+      type: DataTypes.DATE
     },
     duration: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     },
-    planet_id: {
+    planetId: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
@@ -32,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   Game.associate = function(models) {
-    this.belongsToMany(models.persona, { through: 'personas_games'})
+    //this.hasOne()    
   };
   return Game
 };

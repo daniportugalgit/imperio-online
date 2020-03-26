@@ -2,7 +2,7 @@ const userRepository = require("../repositories/user-repository")
 
 class AuthenticationService {
 	async login(username, password) {
-		const user = await userRepository.get(username)
+		const user = await userRepository.getByUsername(username)
 
 		if (user == null)
 			return null

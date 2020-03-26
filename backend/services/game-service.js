@@ -3,17 +3,42 @@ const personaRepository = require('../repositories/persona-repository')
 const models = require('../models');
 
 class GameService {
-	async addPersona(personaID, roomName) {
-        persona = personaRepository.get(personaID)
-		game = gameRepository.getByName(roomName) || models.game.Build({roomName: roomName})
+	async createGame(roomName, planetID, personaID) {
+		let persona = await personaRepository.get(personaID)
+		if (!persona)
+			throw Error("Persona not found.")
 
-		if (game.id == 0) {
-            game.personas = [persona]
+		let game = models.game.create({
+			userId: persona.user.id,
+			planetId: planetID,
+			roomName: roomName, 
+			participations: [this.buildParticipation(persona)]
+		})
+
+		return game
+	}
+
+	async addPersona(gameID, personaID) {
+		let persona = await personaRepository.get(personaID)
+		if (!persona)
+			throw Error("Persona not found: " + personaID)
+
+		let game = await gameRepository.get(gameID)
+		if (!game)
+			throw Error("Game not found: " + gameID)
+
+		game.participations.push(this.buildParticipation(persona))
+		await game.update({participations: game.participations})
+	}
+
+	buildParticipation(persona) {
+		return {
+			personaId: persona.id,
+			personaName: persona.name
 		}
-		else {
-			game.personas.push(persona)
-        }
 	}
 }
 
 module.exports = new GameService()
+
+require('make-runnable')

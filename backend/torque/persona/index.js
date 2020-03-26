@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
-
 const async = require('../../utils/async');
+
+const taxoAdapter = require("../../services/taxo-adapter")
+const userService = require('../../services/user-service')
 
 router.get('/criar',  
     async.handler(async (req, res) => {
-        let name = req.params.nome; //esse cara vai pro banco de dados, é o nome da persona
-        let userId = req.params.idUsuario; //para associar a persona ao user correto no banco
-        let species = req.params.especie; //pode ser "humano" ou "gulok" ou ""; se for "" é humano.
+        let nome = req.params.nome;
+        let idUsuario = req.params.idUsuario;
+        let especie = req.params.especie;
 
-        //res.send("personaOK " + username + " " + personaId + " " + species);
-        res.send("personaOK dani 99 humano"); //o nome da persona não é retornado ao client; está correto.
+        let persona = await userService.createPersona(nome, idUsuario, taxoAdapter.translateEspecie(especie))
+
+        res.send("personaOK " + persona.user.name + " " + persona.id + " " + species)
     })
 );
 
