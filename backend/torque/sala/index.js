@@ -10,11 +10,13 @@ const gameService = require('../../services/game-service')
 router.get('/adicionar',  
     async.handler(async (req, res) => {
 
-		gameService.addPersona(req.params.idPersona, req.params.sala)
-		
+      gameService.addPersona(req.params.idPersona, req.params.sala)
+      
 
-		
-		res.send("dadosAcademia dani " + zeroes);
+      
+      //res.send("idJogo" + " " + {gameId} + " " + "algumaCoisaAqui" + " " + {persona.user.name});
+      //resposta esperada:
+      //idJogo {gameId} {???} {username} //se a sala não existir mais, Torque espera uma resposta igual, só que com gameId == 0
     })
 );
 
