@@ -18,6 +18,9 @@ api.use('/jogo', jogo)
 module.exports = api
 
 //TODO
+
+//Um arquivo que ajuda a compreender as respostas esperadas pelo Torque é o game/gameScripts/server/serverGetPost.cs
+
 /*
 - Criar sala:
 /sala/adicionar ? idPersona=XX & sala='sala 1' & login=username
