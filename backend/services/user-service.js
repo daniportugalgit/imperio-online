@@ -15,13 +15,15 @@ class UserService {
 	async createPersona(userID, name, species) {
 		let user = await userRepository.get(userID)
 		if (!user)
-			throw Error("User not found.")
+			throw Error("User not found: " + userID)
 
 		let persona = models.persona.build({
 			name: name, 
 			species: species,
 			userId: user.id
 		})
+
+		persona.user = user
 
 		await personaRepository.add(persona)
 

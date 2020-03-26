@@ -4,21 +4,25 @@ const async = require('../../utils/async')
 const models = require('../../models')
 
 const gameService = require('../../services/game-service')
+const personaRepository = require('../../repositories/persona-repository')
 
 //   /sala/adicionar?idPersona=XXX&sala=sala%20YYY&login=username
 
 router.get('/adicionar',  
     async.handler(async (req, res) => {
-      const personID = req.params.idPersona
-      const gameID = req.params.idJogo
-      const roomName = req.params.sala
-      const planetID = 1 // hardcoded ????
+      const personaID = req.query.idPersona
+      const gameID = req.query.idJogo
+      const roomName = req.query.sala
+
+      let persona = await personaRepository.get(personaID)
+      if (!persona)
+			  throw Error("Persona not found: " + personaID)
 
       let game = gameID ? 
-        await gameService.addPersona(gameID, personID) :
-        await gameService.createGame (roomName, planetID, persona)
+        await gameService.addPersona(gameID, persona) :
+        await gameService.createGame(roomName, persona)
   	
-      res.send("idJogo " + game.id);
+      res.send("idJogo " + game.id + " username " + persona.user.name);
     })
 );
 

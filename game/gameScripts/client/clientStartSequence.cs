@@ -412,7 +412,7 @@ function clientPopConfigAcademiaMsgBox(){
 
 
 function clientCmdRegistrarDadosAcademia(%dados){
-	//echo("REGISTRANDO ACADEMIA... Dados = " @ %dados);
+	echo("REGISTRANDO ACADEMIA... Dados = " @ %dados);
 	
 	//soldados/vermes:
 	$myPersona.aca_s_d_min = getWord(%dados, 0);

@@ -5,7 +5,10 @@ const async = require('../../utils/async');
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
-        let id = req.params.idPersona;
+		let id = req.params.idPersona;
+		const academy = await authenticationService.login(req.params.username, req.params.password)      
+
+
     	let zeroes = "";
 
     	for(let i = 0; i < 60; i++) {
@@ -19,3 +22,15 @@ router.get('/buscar',
 );
 
 module.exports = router;
+
+
+async.handler(async (req, res) => {
+	const user = await authenticationService.login(req.params.username, req.params.password)      
+
+	if (user == null) {
+		res.send("NOK")
+		return
+	}
+
+	res.send(taxoAdapter.adaptLogin(user))
+})
