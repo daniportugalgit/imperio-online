@@ -5,18 +5,13 @@ class PersonaRepository {
 		this.persona = models.persona
 	}
 
-	/*???
 	async get(id) {
 		return await this.user.findOne({
-			include: [{
-			  model: models.persona
-			}], 
 			where: {
 				id: id
 			}
 		})
 	}
-	*/
 }
 
 module.exports = new PersonaRepository()
