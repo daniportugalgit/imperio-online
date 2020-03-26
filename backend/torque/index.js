@@ -7,6 +7,7 @@ const login = require('./login')
 const persona = require('./persona')
 const academia = require('./academia')
 const sala = require('./sala')
+const jogo = require('./jogo')
 
 api.use('/login', login)
 api.use('/persona', persona)

@@ -11,6 +11,7 @@
   "author": "Andrés Camacho & Daniel Portugal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "lodash.mergewith": "^4.6.2",

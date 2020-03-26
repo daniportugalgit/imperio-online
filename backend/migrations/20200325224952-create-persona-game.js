@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Personas_Games', {
+    return queryInterface.createTable('personas_games', {
       game_id: {
         allowNull: false,
         type: Sequelize.INTEGER

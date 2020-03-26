@@ -68,7 +68,6 @@ module.exports = (sequelize, DataTypes) => {
   Persona.associate = function(models) {
     this.belongsTo(models.user)
     this.hasOne(models.academy)
-    this.belongsToMany(models.game, { through: 'Personas_Games'})
   };
   return Persona
 };

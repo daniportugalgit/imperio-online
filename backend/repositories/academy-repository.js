@@ -1,5 +1,3 @@
-const models = require('../models');
-
 class AcademyRepository {
 	constructor() {
 		this.academy = models.academy

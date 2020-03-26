@@ -5,6 +5,10 @@ class UserRepository {
 		this.user = models.user
 	}
 
+	async add(user) {
+		return await this.user.create(user)
+	}
+
 	async get(username) {
 		return await this.user.findOne({
 			include: [{

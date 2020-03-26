@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Game = sequelize.define('Game', {
+  const Game = sequelize.define('game', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   Game.associate = function(models) {
-    this.belongsToMany(models.persona, { through: 'Personas_Games'})
+    this.belongsToMany(models.persona, { through: 'personas_games'})
   };
   return Game
 };

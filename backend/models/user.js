@@ -23,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
     guloks: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      defaultValue: false
     },    
   }, {
     underscored: true,
     timestamps: false,
-    
   });
   User.associate = function(models) {
     this.hasMany(models.persona)
