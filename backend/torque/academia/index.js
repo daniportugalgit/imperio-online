@@ -8,8 +8,7 @@ router.get('/buscar',
     async.handler(async (req, res) => {
 		let id = req.query.idPersona;
 
-
-    	let zeroes = "";
+		let zeroes = "";
 
     	for(let i = 0; i < 60; i++) {
     		zeroes += "0 "
@@ -17,7 +16,7 @@ router.get('/buscar',
 
     	zeroes += "0"; //the 61st zero;
 
-    	res.send("dadosAcademia dani " + zeroes);
+    	res.send("dadosAcademia daniel " + zeroes);
     })
 );
 
