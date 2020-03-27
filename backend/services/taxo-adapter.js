@@ -29,9 +29,9 @@ class TaxoAdapter {
 
     translateTermino(termino) {
         const map = {
-            F: "survivor",
-            S: "suicide",
-            M: "killed"
+            F: "finished",
+            S: "suicided",
+            R: "surrended"
         }
 
         return map[termino]

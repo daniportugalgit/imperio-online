@@ -10,16 +10,16 @@ const personaRepository = require('../../repositories/persona-repository')
 
 router.get('/adicionar',  
     async.handler(async (req, res) => {
-      const personaID = req.query.idPersona
-      const gameID = req.query.idJogo
+      const personaId = req.query.idPersona
+      const gameId = req.query.idJogo
       const roomName = req.query.sala
 
-      let persona = await personaRepository.get(personaID)
+      let persona = await personaRepository.get(personaId)
       if (!persona)
-			  throw Error("Persona not found: " + personaID)
+			  throw Error("Persona not found: " + personaId)
 
-      let game = gameID ? 
-        await gameService.addPersona(gameID, persona) :
+      let game = gameId ? 
+        await gameService.addPersona(gameId, persona) :
         await gameService.createGame(roomName, persona)
   	
       res.send("idJogo " + game.id + " username " + persona.user.name);

@@ -1,5 +1,6 @@
 const express = require('express')
-const parser = require('body-parser');
+const parser = require('body-parser')
+const morgan = require('morgan')
 const config = require('./config')
   
 const app = express()
@@ -10,6 +11,7 @@ app.get('/', (req, res) => {
 
 app.use(express.json())
 app.use(parser.json())
+app.use(morgan('tiny'))
 app.use('/torque', require('./torque')) 
 app.use('/api', require('./api'))
 

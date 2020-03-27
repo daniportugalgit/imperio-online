@@ -11,10 +11,10 @@ class UserService {
 		return created;
 	}
 
-	async createPersona(userID, name, species) {
-		let user = await userRepository.get(userID)
+	async createPersona(userId, name, species) {
+		let user = await userRepository.get(userId)
 		if (!user)
-			throw Error("User not found: " + userID)
+			throw Error("User not found: " + userId)
 
 		let persona = models.persona.build({
 			name: name, 

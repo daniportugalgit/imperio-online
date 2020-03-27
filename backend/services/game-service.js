@@ -13,12 +13,13 @@ class GameService {
 		return game
 	}
 
-	async addPersona(gameID, persona) {
-		let game = await gameRepository.get(gameID)
+	async addPersona(gameId, persona) {
+		let game = await gameRepository.get(gameId)
 		if (!game)
-			throw Error("Game not found: " + gameID)
+			throw Error("Game not found: " + gameId)
 
 		let participations = game.participations.concat([this.buildParticipation(persona)])
+		
 		await game.update({participations: participations})
 		
 		return game
@@ -29,17 +30,18 @@ class GameService {
 		if (!game)
 			throw Error("Game not found: " + gameId)
 
-		let personas = await this.updateAllParticipantStats(participations)		
+		let personas = await this.updateAllStats(participations)		
 
 		await game.update({participations: participations, duration: duration, planetId: planetId})	
 
 		return await this.createNextGame(game, personas)
 	}
 	
-	async updateAllParticipantStats(participations) {
+	async updateAllStats(participations) {
 		let personas = []
+
 		for (let i = 0; i < participations.length; i++) {	
-			let persona = await this.updateParticipantStats(participations[i])
+			let persona = await this.updatePersonaStats(participations[i])
 			persona.save()
 			personas.push(persona)
 		}
@@ -47,9 +49,10 @@ class GameService {
 		return personas
 	}
 
-	async updateParticipantStats(participation) {
+	async updatePersonaStats(participation) {
 		let persona = await personaRepository.get(participation.personaId)
 		
+		persona.games += 1
 		persona.credits += participation.credits
 		persona.victories += participation.victory
 		persona.attacked += participation.attacked

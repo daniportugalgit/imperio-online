@@ -10,6 +10,7 @@ services:
       - IMPERIO_DATABASE_NAME=imperio
       - IMPERIO_DATABASE_USER=admin
       - IMPERIO_DATABASE_PASSWORD=Imperio123!
+      - IMPERIO_DATABASE_CONSOLE_OUTPUT=false
     ports:
       - '80:8000'
     expose:
