@@ -25,6 +25,7 @@ router.get('/finalizar',
 
         add('creditos', 'credits', x => parseInt(x))
         add('b_vitoria', 'victory', x => parseInt(x))
+        add('b_atacou', 'attacked', x => parseInt(x))
         add('pontos', 'points', x => parseInt(x))
         add('b_visionario', 'visionary', x => parseInt(x))
         add('b_arrebatador', 'sweeper', x => parseInt(x))

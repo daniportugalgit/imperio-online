@@ -52,6 +52,7 @@ class GameService {
 		
 		persona.credits += participation.credits
 		persona.victories += participation.victory
+		persona.attacked += participation.attacked
 		persona.points += participation.points
 		persona.sweeper += participation.sweeper
 		persona.trader += participation.trader
