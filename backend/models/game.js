@@ -37,5 +37,6 @@ module.exports = (sequelize, DataTypes) => {
   Game.associate = function(models) {
     //this.hasOne()    
   };
+
   return Game
 };

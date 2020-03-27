@@ -4,7 +4,6 @@ const models = require('../models')
 
 class UserService {
 	async create(user) {
-
 		//TODO: Validate if user with same name already exists
 
 		let created = await userRepository.add(user)

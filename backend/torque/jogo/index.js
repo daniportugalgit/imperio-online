@@ -5,39 +5,36 @@ const router = express.Router()
 const async = require('../../utils/async')
 
 const gameService = require('../../services/game-service')
+const taxoAdapter = require('../../services/taxo-adapter')
+
+
 
 router.get('/finalizar',  
     async.handler(async (req, res) => {
-        let participations = {}
 
-        let order = []
-        req.query.idsPersona.split(';').forEach((id, i) => {
-            order[i] = id
-            participations[id] = {personaID: id}
-        })
+        let participations = req.query.idsPersona.split(';').map(id => { return {personaId: id }})
 
-        let add = (input, output) => {
+        const add = (input, output, translate) => {
             if (!req.query[input])
                 return
-
-            req.query[input].split(';').forEach((x, i) => {
-                participations[order[i]][output] = x
+        
+            req.query[input].split(';').forEach((value, i) => {
+                participations[i][output] = translate(value)
             })
         }
 
-        add('creditos', 'credits')
-        add('b_vitoria', 'hasWon')
-        add('pontos', 'points')
-        add('b_visionario', 'visionary')
-        add('b_arrebatador', 'sweeper')
-        add('b_comerciante', 'trader')
-        add('id_obj1', 'objective1')
-        add('id_obj2', 'objective2')
-        add('onde_saiu', 'startingRegion')
-        add('qts_matou', 'kills')
-        add('b_pk_power_play', 'powerPlay')
-        add('termino', 'endGameStatus')
-        
+        add('creditos', 'credits', x => parseInt(x))
+        add('b_vitoria', 'victory', x => parseInt(x))
+        add('pontos', 'points', x => parseInt(x))
+        add('b_visionario', 'visionary', x => parseInt(x))
+        add('b_arrebatador', 'sweeper', x => parseInt(x))
+        add('b_comerciante', 'trader', x => parseInt(x))
+        add('id_obj1', 'objective1Id', x => parseInt(x))
+        add('id_obj2', 'objective2Id', x => parseInt(x))
+        add('onde_saiu', 'regionId', x => parseInt(x))
+        add('qts_matou', 'kills', x => parseInt(x))
+        add('termino', 'endgame', (t) => taxoAdapter.translateTermino(t))
+
         let nextGame = await gameService.endGame(req.query.idJogo, participations, req.query.duracao, req.query.planeta)
         
     	res.send("idJogo " + req.query.idJogo+ " " + nextGame.id);
