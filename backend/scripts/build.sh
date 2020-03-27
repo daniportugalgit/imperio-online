@@ -1,0 +1,1 @@
+zmaster && docker build . --tag imperio-backend:latest
