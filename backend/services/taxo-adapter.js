@@ -11,7 +11,7 @@ class TaxoAdapter {
 
     translateEspecie(especie) {
         const map = {
-            human: "human",
+            humano: "human",
             gulok: "gulok"
         }
 
