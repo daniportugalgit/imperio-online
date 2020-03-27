@@ -5,7 +5,7 @@ const async = require('../../utils/async');
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
-		let id = req.params.idPersona;
+		let id = req.query.idPersona;
 		const academy = await authenticationService.login(req.params.username, req.params.password)      
 
 
