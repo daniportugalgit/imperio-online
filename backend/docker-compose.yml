@@ -5,11 +5,11 @@ services:
     restart: always
 
     environment:
-      IMPERIO_SERVER_LISTEN_PORT=8000
-      IMPERIO_DATABASE_HOST=imperio-database.ck81rohysnal.us-east-2.rds.amazonaws.com
-      IMPERIO_DATABASE_NAME=imperio
-      IMPERIO_DATABASE_USER=admin
-      IMPERIO_DATABASE_PASSWORD=Imperio123!
+      - IMPERIO_SERVER_LISTEN_PORT=8000
+      - IMPERIO_DATABASE_HOST=imperio-database.ck81rohysnal.us-east-2.rds.amazonaws.com
+      - IMPERIO_DATABASE_NAME=imperio
+      - IMPERIO_DATABASE_USER=admin
+      - IMPERIO_DATABASE_PASSWORD=Imperio123!
     ports:
       - '80:8000'
     expose:
