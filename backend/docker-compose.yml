@@ -1,15 +1,16 @@
 version: '3.3'
 services:
   db:
-    image: mysql
+    image: imperio-backend
     restart: always
 
     environment:
-      MYSQL_DATABASE: 'imperio'
-      MYSQL_USER: 'imperio'
-      MYSQL_PASSWORD: 'imperiothisisaverysecretpassword'
-      MYSQL_ROOT_PASSWORD: 'rootthisisaverysecretpassword'
+      IMPERIO_SERVER_LISTEN_PORT=8000
+      IMPERIO_DATABASE_HOST=imperio-database.ck81rohysnal.us-east-2.rds.amazonaws.com
+      IMPERIO_DATABASE_NAME=imperio
+      IMPERIO_DATABASE_USER=admin
+      IMPERIO_DATABASE_PASSWORD=Imperio123!
     ports:
-      - '3306:3306'
+      - '80:8000'
     expose:
-      - '3306'
+      - '80'

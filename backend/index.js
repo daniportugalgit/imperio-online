@@ -14,5 +14,5 @@ app.use('/torque', require('./torque'))
 app.use('/api', require('./api'))
 
 app.listen(config.server.port, () => {
-    console.log("Server is up!")
+    console.log("Server is up and listening on port " + config.server.port + ".")
 });

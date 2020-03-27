@@ -38,7 +38,7 @@ class GameService {
 	
 	async updateAllParticipantStats(participations) {
 		let personas = []
-		for (let i = 0; i < participations.length; i++) {
+		for (let i = 0; i < participations.length; i++) {	
 			let persona = await this.updateParticipantStats(participations[i])
 			persona.save()
 			personas.push(persona)
