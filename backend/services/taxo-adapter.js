@@ -64,8 +64,8 @@ class TaxoAdapter {
             login["creditos"+c] = p.credits
             login["b_tutorial"+c] = this.translateBoolean(p.tutorial)
             login["especie"+c] = this.translateSpecies(p.species)
-            login["pk_fichas"+c] = 0
             login["pk_vitorias"+c] = 0
+            login["pk_fichas"+c] = 0
             login["pk_power_plays"+c] = 0
         })
 
