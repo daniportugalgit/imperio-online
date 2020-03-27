@@ -6,11 +6,9 @@ const personaRepository = require('../../repositories/persona-repository')
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
-		let persona = personaRepository.get(req.query.idPersona)
+		let persona = await personaRepository.get(req.query.idPersona)
 		if (!persona)
 			throw Error("Persona not found: " + req.query.idPersona)
-
-		
 
 		let zeroes = "";
 
