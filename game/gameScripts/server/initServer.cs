@@ -13,12 +13,11 @@
 // ============================================================
 //$debugMaster=true; //estou debugando
 function devOn(){
-	$enderecoTaxo
-	= "dev.projetoimperio.com";	
+	$enderecoTaxo = "dev.projetoimperio.com";	
 }
 
 function devOff(){
-	$enderecoTaxo= "www.projetoimperio.com";	
+	$enderecoTaxo= "18.219.31.98";	
 }
 
 function serverCmdDebugMaster(){
@@ -46,7 +45,7 @@ function getEnderecoTaxo(){
 	}
 	%file.delete(); //apaga da memória RAM
 	*/
-	$enderecoTaxo = "www.projetoimperio.com";
+	$enderecoTaxo = "18.219.31.98";
 }
 
 function justATest() {
@@ -173,8 +172,29 @@ function verificarTaxoLogin(%user){
 	{
 		%thisPersona = %user.myPersonas.getObject(%i);
 		%dados[%i] = %thisPersona.nome SPC %thisPersona.TAXOvitorias SPC %thisPersona.TAXOpontos SPC %thisPersona.TAXOvisionario SPC %thisPersona.TAXOarrebatador SPC %thisPersona.myComerciante SPC %thisPersona.myDiplomata SPC %thisPersona.TAXOcreditos SPC %thisPersona.patente.nome SPC %user.TAXOomnis SPC %thisPersona.especie SPC %thisPersona.pk_vitorias SPC %thisPersona.pk_fichas SPC %thisPersona.pk_power_plays;			
+		
+		echo("thisPersona.nome: " @ %thisPersona.nome);
+		echo("thisPersona.TAXOvitorias: " @ %thisPersona.TAXOvitorias);
+		echo("thisPersona.TAXOpontos: " @ %thisPersona.TAXOpontos);
+		echo("thisPersona.TAXOvisionario: " @ %thisPersona.TAXOvisionario);
+		echo("thisPersona.TAXOarrebatador: " @ %thisPersona.TAXOarrebatador);
+		echo("thisPersona.myComerciante: " @ %thisPersona.myComerciante);
+		echo("thisPersona.myDiplomata: " @ %thisPersona.myDiplomata);
+		echo("thisPersona.TAXOcreditos: " @ %thisPersona.TAXOcreditos);
+		echo("thisPersona.patente.nome: " @ %thisPersona.patente.nome);
+		echo("thisPersona.TAXOomnis: " @ %thisPersona.TAXOomnis);
+		echo("thisPersona.especie: " @ %thisPersona.especie);
+		echo("thisPersona.pk_vitorias: " @ %thisPersona.pk_vitorias);
+		echo("thisPersona.pk_fichas: " @ %thisPersona.pk_fichas);
+		echo("thisPersona.pk_power_plays: " @ %thisPersona.pk_power_plays);
+		
 		%thisPersona.dados = %dados[%i];
 	}
+
+	echo("user persona 1: " @ %dados[0]);
+	echo("user persona 2: " @ %dados[1]);
+	echo("user persona 3: " @ %dados[2]);
+	echo("user persona 4: " @ %dados[3]);
 	
 	commandToClient(%user.client, 'popularComandantes', %user.personasCount,  %dados[0],  %dados[1],  %dados[2],  %dados[3],  %dados[4], %user.TAXOconhece_g);//apaga o clientStartGui e o NetworkMenu, e chama o escolherComandanteGui; esta função está no clientStartSequence
 }

@@ -105,7 +105,12 @@ function clientVoltarPraCommSelect(){
 
 //recém logou, o server chama esta função aki no client:
 function clientCmdPopularComandantes(%numDePersonas, %persona1Dados, %persona2Dados, %persona3Dados, %persona4Dados, %persona5Dados, %conhece_g){
-	//echo("ClientCmdPopularComandantes::Número de Personas = " @ %numDePersonas);
+	echo("ClientCmdPopularComandantes::Número de Personas = " @ %numDePersonas);
+	echo("persona1Dados: " @ %persona1Dados);
+	echo("persona2Dados: " @ %persona2Dados);
+	echo("persona3Dados: " @ %persona3Dados);
+	echo("persona4Dados: " @ %persona4Dados);
+
 	if(isObject($myPersonas)){
 		//limpa, caso o usuário esteja deletando uma persona
 		$myPersonas.clear(); 

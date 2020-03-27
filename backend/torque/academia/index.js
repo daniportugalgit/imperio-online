@@ -1,12 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
-
 const async = require('../../utils/async');
+
+const personaRepository = require('../../repositories/persona-repository')
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
-		let id = req.query.idPersona;
+		let persona = personaRepository.get(req.query.idPersona)
+		if (!persona)
+			throw Error("Persona not found: " + req.query.idPersona)
+
+		
 
 		let zeroes = "";
 
@@ -16,7 +20,7 @@ router.get('/buscar',
 
     	zeroes += "0"; //the 61st zero;
 
-    	res.send("dadosAcademia daniel " + zeroes);
+    	res.send("dadosAcademia " + persona.user.name + " " + zeroes);
     })
 );
 

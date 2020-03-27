@@ -297,6 +297,8 @@ function tcpObjGet::onLine(%this, %dados)
 //////////////
 //recebendo um usuário e o preview de suas personas (sem informações sobre pesquisas):
 function loginRecebido(%dados){
+	echo("Login response: " @ %dados);
+
 	%i = 0;
 	%chave = "inicio";
 	
@@ -467,6 +469,12 @@ function loginRecebido(%dados){
 	}
 		
 	echo (">>>>>LOGIN:" @ %TaxoDados[0] @ " > Personas:" @ %TaxoDados[4]);
+
+	echo("TAXO DADOS MONTADO:");
+	for(%kk = 0; %kk < 80; %kk++) {
+		echo(%TaxoDados[%kk]);
+	}
+	echo("FIM DO TAXO DADOS!");
 	
 	if(%TaxoDados[0] !$= "" && %TaxoDados[4] !$= ""){
 		for(%k = 0; %k < $serverSimUSERS.getCount(); %k++){
@@ -500,7 +508,8 @@ function loginRecebido(%dados){
 					%x.pk_vitorias = %TaxoDados[17 + %base];
 					%x.pk_fichas = %TaxoDados[18 + %base];
 					%x.pk_power_plays = %TaxoDados[19 + %base];
-					
+
+
 					if(%x.TAXOjogos $= ""){
 						%x.TAXOjogos = 0;	
 					}
