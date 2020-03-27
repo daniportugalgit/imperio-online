@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+
 const async = require('../../utils/async');
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
 		let id = req.query.idPersona;
-		const academy = await authenticationService.login(req.params.username, req.params.password)      
 
 
     	let zeroes = "";
