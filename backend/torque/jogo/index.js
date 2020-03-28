@@ -35,6 +35,8 @@ const parseParticipations = (query) => {
     add('onde_saiu', 'regionId', x => parseInt(x))
     add('qts_matou', 'kills', x => parseInt(x))
     add('termino', 'endgame', (t) => taxoAdapter.translateTermino(t))
+
+    return participations
 }
 
 router.get('/finalizar',  
