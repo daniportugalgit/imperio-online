@@ -68,7 +68,7 @@ class AcademyResearcher {
       this.create('aca_i_2', 0)
       this.create('aca_i_3', 0)
 
-      this.create('aca_pea_id', null)
+      this.create('aca_pea_id', 0)
       this.create('aca_pea_min', 0)
       this.create('aca_pea_pet', 0)
       this.create('aca_pea_ura', 0)
@@ -105,7 +105,7 @@ class AcademyResearcher {
     }
 
     clearOngoing() {
-      this.academy.aca_pea_id = null
+      this.academy.aca_pea_id = 0
       this.academy.aca_pea_min = 0
       this.academy.aca_pea_pet = 0
       this.academy.aca_pea_ura = 0
