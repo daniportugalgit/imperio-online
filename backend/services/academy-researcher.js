@@ -59,6 +59,7 @@ class AcademyResearcher {
       this.create('aca_v_4', 0)
       this.create('aca_v_5', 0)
       this.create('aca_v_6', 0)
+
       this.create('aca_a_1', 0)
       this.create('aca_a_2', 0)
       this.create('aca_c_1', 0)
@@ -66,15 +67,18 @@ class AcademyResearcher {
       this.create('aca_i_1', 0)
       this.create('aca_i_2', 0)
       this.create('aca_i_3', 0)
+
       this.create('aca_pea_id', null)
       this.create('aca_pea_min', 0)
       this.create('aca_pea_pet', 0)
       this.create('aca_pea_ura', 0)
       this.create('aca_pea_ldr', 0)
+
       this.create('aca_av_1', 0)
       this.create('aca_av_2', 0)
       this.create('aca_av_3', 0)
       this.create('aca_av_4', 0)
+
       this.create('aca_pln_1', 0)
       this.create('aca_art_1', 0)
       this.create('aca_art_2', 0)
