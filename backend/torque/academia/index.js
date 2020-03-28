@@ -20,7 +20,7 @@ router.get('/iniciar',
     async.handler(async (req, res) => {
 		await academyService.startResearch(req.query.idPersona, req.query.pesq, req.query.lider, -req.query.creditos)
 		
-    	res.send("adademiaOK " + req.query.idPesqTorque);
+    	res.send("academiaOK " + req.query.idPesqTorque);
     })
 );
 
@@ -28,7 +28,7 @@ router.get('/finalizar',
     async.handler(async (req, res) => {
 		await academyService.finishResearch(req.query.idPersona, req.query.pesq, -req.query.creditos)
 		
-    	res.send("adademiaOK " + req.query.idPesqTorque);
+    	res.send("academiaOK " + req.query.idPesqTorque);
     })
 );
 
@@ -36,7 +36,7 @@ router.get('/investir',
     async.handler(async (req, res) => {
 		await academyService.investResearch(req.query.idPersona, req.query.min, req.query.pet, req.query.ura, -req.query.creditos)
 		
-    	res.send("adademiaOK " + req.query.idPesqTorque);
+    	res.send("academiaOK " + req.query.idPesqTorque);
     })
 );
 
