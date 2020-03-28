@@ -1,5 +1,6 @@
 const userRepository = require('../repositories/user-repository')
 const personaRepository = require('../repositories/persona-repository')
+const AcademyResearcher = require('../services/academy-researcher')
 const models = require('../models')
 
 class UserService {
@@ -22,7 +23,10 @@ class UserService {
 			userId: user.id
 		})
 
+		let researcher = new AcademyResearcher()
+		
 		persona.user = user
+		persona.academy = researcher.academy
 
 		await personaRepository.add(persona)
 

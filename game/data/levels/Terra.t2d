@@ -3126,7 +3126,7 @@
       canSaveDynamicFields = "1";
       Position = "-57.176 44.070";
       size = "1.465 1.465";
-         IAmServer = "0";
+         IAmServer = "1";
          mountID = "223";
    };
    new t2dAnimatedSprite(arrowAnim) {

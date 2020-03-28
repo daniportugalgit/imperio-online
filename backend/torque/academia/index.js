@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const async = require('../../utils/async');
 
+const taxoAdapter = require('../../services/taxo-adapter')
 const personaRepository = require('../../repositories/persona-repository')
+const AcademyResearcher = require('../../services/academy-researcher')
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
@@ -10,14 +12,18 @@ router.get('/buscar',
 		if (!persona)
 			throw Error("Persona not found: " + req.query.idPersona)
 
-		let zeroes = "";
+    	res.send("dadosAcademia " + persona.user.name + " " + taxoAdapter.adaptAcademy(persona.academy));
+    })
+);
 
-    	for(let i = 0; i < 60; i++) {
-    		zeroes += "0 "
-    	}
+router.get('/iniciar',  
+    async.handler(async (req, res) => {
+		// let builder = new AcademyManager(persona.academy)
 
-    	zeroes += "0"; //the 61st zero;
-
+		// builder.finishResearch('aca...'')
+		
+		// models.persona.update({academy: manager.academy})
+		
     	res.send("dadosAcademia " + persona.user.name + " " + zeroes);
     })
 );

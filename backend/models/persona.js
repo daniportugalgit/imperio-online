@@ -60,6 +60,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       defaultValue: "human"
+    },      
+    academy: {
+      type: DataTypes.JSON,
+      allowNull: false
     },                     
   }, {
     underscored: true,
@@ -67,7 +71,6 @@ module.exports = (sequelize, DataTypes) => {
   });
   Persona.associate = function(models) {
     this.belongsTo(models.user)
-    this.hasOne(models.academy)
   };
   return Persona
 };
