@@ -18,7 +18,7 @@ const parseParticipations = (query) => {
         if (!query[input])
             return
     
-        req.query[input].split(';').forEach((value, i) => {
+        query[input].split(';').forEach((value, i) => {
             participations[i][output] = translate(value)
         })
     }
