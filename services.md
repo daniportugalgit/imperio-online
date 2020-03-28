@@ -179,7 +179,7 @@ A resposta deve ser "OK"?
 #5) Pesquisas
 
 Iniciar:
-/academia/iniciar?idPersona= @ %persona.TAXOid @ "&pesq=" @ %pesquisaIDproTAXO @ "&lider=" @ %liderNum @ "&creditos=-" @ %pesquisa.custoInicial @ "&idPesqTorque=" @ %myServerPesq.num;
+/academia/iniciar?idPersona= @ %persona.TAXOid @ "&pesq=" @ %pesquisaIDproTAXO @ "&lider=" @ %liderNum @ "&creditos=-" @ %pesquisa.x @ "&idPesqTorque=" @ %myServerPesq.num;
 ===> /academia/iniciar?idPersona=9&pesq=12&lider=1&creditos=-99&idPesqTorque=12;
 
 Investir:

@@ -1,5 +1,7 @@
 'use strict';
 
+JsonField = require('sequelize-json'),
+
 module.exports = (sequelize, DataTypes) => {
   const Persona = sequelize.define('persona', {
     id: {
@@ -61,10 +63,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: "human"
     },      
-    academy: {
-      type: DataTypes.JSON,
-      allowNull: false
-    },                     
+    academy: JsonField(sequelize, 'persona', 'academy')                     
   }, {
     underscored: true,
     timestamps: false,

@@ -4,7 +4,7 @@ const async = require('../../utils/async');
 
 const taxoAdapter = require('../../services/taxo-adapter')
 const personaRepository = require('../../repositories/persona-repository')
-const AcademyResearcher = require('../../services/academy-researcher')
+const academyService = require('../../services/academy-service')
 
 router.get('/buscar',  
     async.handler(async (req, res) => {
@@ -18,26 +18,27 @@ router.get('/buscar',
 
 router.get('/iniciar',  
     async.handler(async (req, res) => {
-		// let builder = new AcademyManager(persona.academy)
+		await academyService.startResearch(req.query.idPersona, req.query.pesq, req.query.lider, -req.query.creditos)
+		
+    	res.send("adademiaOK " + req.query.idPesqTorque);
+    })
+);
 
-		// builder.finishResearch('aca...'')
+router.get('/finalizar',  
+    async.handler(async (req, res) => {
+		await academyService.finishResearch(req.query.idPersona, req.query.pesq, -req.query.creditos)
 		
-		// models.persona.update({academy: manager.academy})
+    	res.send("adademiaOK " + req.query.idPesqTorque);
+    })
+);
+
+router.get('/investir',  
+    async.handler(async (req, res) => {
+		await academyService.investResearch(req.query.idPersona, req.query.min, req.query.pet, req.query.ura, -req.query.creditos)
 		
-    	res.send("dadosAcademia " + persona.user.name + " " + zeroes);
+    	res.send("adademiaOK " + req.query.idPesqTorque);
     })
 );
 
 module.exports = router;
 
-
-async.handler(async (req, res) => {
-	const user = await authenticationService.login(req.params.username, req.params.password)      
-
-	if (user == null) {
-		res.send("NOK")
-		return
-	}
-
-	res.send(taxoAdapter.adaptLogin(user))
-})

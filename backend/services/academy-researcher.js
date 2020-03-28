@@ -2,9 +2,10 @@
 
 class AcademyResearcher {
 
-    contruct(academy) {
+    constructor(academy) {
       this.academy = academy
       if (!this.academy) {
+        this.academy = {}
         this.init()
       }
     }
@@ -79,12 +80,13 @@ class AcademyResearcher {
       this.create('aca_art_2', 0)
     }
    
-    create(id, value) {
-      this.academy.aca_pea_id = value
+    create(researchId, value) {
+      this.academy[researchId] = value
     }
 
-    start(id) {
-      this.academy.aca_pea_id = id
+    start(researchId, leaderId) {
+      this.academy.aca_pea_id = researchId
+      this.academy.aca_pea_ldr = leaderId
     }
   
     finish() {
@@ -99,11 +101,11 @@ class AcademyResearcher {
     }
 
     clearOngoing() {
-      this.academy[aca_pea_id] = null
-      this.academy[aca_pea_min] = 0
-      this.academy[aca_pea_pet] = 0
-      this.academy[aca_pea_ura] = 0
-      this.academy[aca_pea_ldr] = 0
+      this.academy.aca_pea_id = null
+      this.academy.aca_pea_min = 0
+      this.academy.aca_pea_pet = 0
+      this.academy.aca_pea_ura = 0
+      this.academy.aca_pea_ldr = 0
     }
   }
 

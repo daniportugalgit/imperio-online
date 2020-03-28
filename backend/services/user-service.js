@@ -23,10 +23,8 @@ class UserService {
 			userId: user.id
 		})
 
-		let researcher = new AcademyResearcher()
-		
 		persona.user = user
-		persona.academy = researcher.academy
+		persona.academy = new AcademyResearcher().academy
 
 		await personaRepository.add(persona)
 
