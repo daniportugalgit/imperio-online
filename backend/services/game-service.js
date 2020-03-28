@@ -30,6 +30,7 @@ class GameService {
 		if (!game)
 			throw Error("Game not found: " + gameId)
 
+		console.log(participations)
 		let personas = await this.updateAllStats(participations)		
 
 		await game.update({participations: participations, duration: duration, planetId: planetId})	
@@ -51,7 +52,9 @@ class GameService {
 
 	async updatePersonaStats(participation) {
 		let persona = await personaRepository.get(participation.personaId)
-		
+		if (!persona)
+			throw Error("Persona not found: " + participation.personaId)
+
 		persona.games += 1
 		persona.credits += participation.credits
 		persona.victories += participation.victory
