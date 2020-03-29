@@ -30,7 +30,6 @@ class GameService {
 		if (!game)
 			throw Error("Game not found: " + gameId)
 
-		console.log(participations)
 		let personas = await this.updateAllStats(participations)		
 
 		await game.update({participations: participations, duration: duration, planetId: planetId})	

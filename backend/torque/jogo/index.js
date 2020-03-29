@@ -8,7 +8,7 @@ const gameService = require('../../services/game-service')
 const taxoAdapter = require('../../services/taxo-adapter')
 
 const parseParticipations = (query) => {
-    let participations = query.idsPersona.split(';').map(id => { 
+    let participations = query.idsPersona.slice(0, -1).split(';').map(id => { 
         return { 
             personaId: id 
         }
@@ -18,7 +18,7 @@ const parseParticipations = (query) => {
         if (!query[input])
             return
     
-        query[input].split(';').forEach((value, i) => {
+        query[input].slice(0, -1).split(';').forEach((value, i) => {
             participations[i][output] = translate(value)
         })
     }
