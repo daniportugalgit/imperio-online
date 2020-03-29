@@ -38,8 +38,8 @@ class TaxoAdapter {
     } 
 
     adaptAcademy(academy) {
-        let researches = [academy.aca_s_d_min, academy.aca_s_d_max, academy.aca_s_d_min, academy.aca_s_d_max, academy.aca_s_a_min, academy.aca_s_a_max, academy.aca_t_d_min, //7
-                        academy.aca_t_d_max, academy.aca_t_a_min, academy.aca_t_a_max, academy.aca_n_d_min, academy.aca_n_d_max, academy.aca_n_a_min, academy.aca_n_a_max, //7
+        let researches = [academy.aca_s_d_min, academy.aca_s_d_max, academy.aca_s_a_min, academy.aca_s_a_max, academy.aca_t_d_min, academy.aca_t_d_max, academy.aca_t_a_min, //7
+                        academy.aca_t_a_max, academy.aca_n_d_min, academy.aca_n_d_max, academy.aca_n_a_min, academy.aca_n_a_max, //7
                         academy.aca_ldr_1_d_min, academy.aca_ldr_1_d_max, academy.aca_ldr_1_a_min, academy.aca_ldr_1_a_max, academy.aca_ldr_1_h1, academy.aca_ldr_1_h2, //6
                         academy.aca_ldr_1_h3, academy.aca_ldr_1_h4, academy.aca_ldr_2_d_min, academy.aca_ldr_2_d_max, academy.aca_ldr_2_a_min, academy.aca_ldr_2_a_max, //6
                         academy.aca_ldr_2_h1, academy.aca_ldr_2_h2, academy.aca_ldr_2_h3, academy.aca_ldr_2_h4, academy.aca_ldr_3_d_min, academy.aca_ldr_3_d_max, //6
