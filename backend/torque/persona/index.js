@@ -4,6 +4,7 @@ const async = require('../../utils/async');
 
 const taxoAdapter = require("../../services/taxo-adapter")
 const userService = require('../../services/user-service')
+const personaRepository = require('../../repositories/persona-repository')
 
 router.get('/criar',  
     async.handler(async (req, res) => {
