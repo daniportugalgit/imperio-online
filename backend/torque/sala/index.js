@@ -7,7 +7,7 @@ const gameService = require('../../services/game-service')
 const personaRepository = require('../../repositories/persona-repository')
 
 //   /sala/adicionar?idPersona=XXX&sala=sala%20YYY&login=username
-
+//OU /sala/adicionar?idPersona=XXX&idJogo=YYY&login=username
 router.get('/adicionar',  
     async.handler(async (req, res) => {
       const personaId = req.query.idPersona
@@ -23,6 +23,14 @@ router.get('/adicionar',
         await gameService.createGame(roomName, persona)
   	
       res.send("idJogo " + game.id + " username " + persona.user.name);
+    })
+);
+
+//   /sala/remover?idPersona=XXX&idJogo=YYY&login=username
+router.get('/remover',  
+    async.handler(async (req, res) => {
+      
+      res.send("idJogo " + req.query.idJogo + " username " + req.query.username);
     })
 );
 
