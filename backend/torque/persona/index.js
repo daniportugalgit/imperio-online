@@ -17,4 +17,21 @@ router.get('/criar',
     })
 );
 
+//   /persona/tutorial?idPersona= @ %persona.taxoId @ "&creditos=5&idUsuario=" @ %persona.user.taxoId;
+router.get('/tutorial',  
+    async.handler(async (req, res) => {
+        const personaId = req.query.idPersona
+        const credits = req.query.creditos
+        
+        let persona = await personaRepository.get(personaId)
+        if (!persona)
+		    throw Error("Persona not found: " + personaId)
+
+        await persona.update({credits: persona.credits + credits})
+
+        res.send("personaTutorial " + persona.user.name)
+    })
+);
+
+
 module.exports = router;
