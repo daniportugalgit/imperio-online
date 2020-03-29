@@ -45,7 +45,7 @@ router.get('/finalizar',
 
         let nextGame = await gameService.endGame(req.query.idJogo, participations, req.query.duracao, req.query.planeta)
         
-    	res.send("OK " + req.query.idJogo+ " " + nextGame.id);
+    	res.send("OK " + req.query.idJogoTorque + " " + nextGame.id);
     })
 );
 
