@@ -26,7 +26,7 @@ export default function Ranking() {
 
     const [loading, setLoading] = useState(false)
     const [personasCount, setPersonasCount] = useState(0)
-    const [filter, setFilter] = useState("victories")
+    const [filter, setFilter] = useState("points")
     const [personas, setPersonas] = useState([])
 
     async function loadRanking() {
@@ -65,6 +65,10 @@ export default function Ranking() {
 
     return (
         <View style={styles.container}>
+            <View style={styles.header}>
+                <Text>Vitórias</Text>
+                <Text>Pontos</Text>
+            </View>
             <Leaderboard 
                 data={personas} 
                 sortBy={filter}
