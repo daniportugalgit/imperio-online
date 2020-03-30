@@ -13,5 +13,29 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center'
+    },
+
+    filterButton: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: "#008800",
+        borderRadius: 8,
+        width: '40%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 30,
+        marginBottom: 20
+    },
+
+    filterButtonText: {
+        fontSize: 15,
+        color: '#FFF',
+        marginLeft: 6
+    },
+
+    logo: {
+        width: 40,
+        height: 40,
+        top: -10
     }
 })
