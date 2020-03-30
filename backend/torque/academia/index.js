@@ -34,7 +34,7 @@ router.get('/finalizar',
 
 router.get('/investir',  
     async.handler(async (req, res) => {
-		await academyService.investResearch(req.query.idPersona, req.query.min, req.query.pet, req.query.ura, -req.query.creditos)
+		await academyService.investResearch(req.query.idPersona, parseInt(req.query.min), parseInt(req.query.pet), parseInt(req.query.ura), -req.query.creditos)
 		
     	res.send("academiaOK " + req.query.idPesqTorque);
     })
