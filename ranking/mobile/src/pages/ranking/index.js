@@ -9,6 +9,15 @@ import api from '../../services/api'
 //import logoImg from '../../assets/logo.png'
 import styles from './styles'
 
+/*
+    [
+        {name: 'Alice', points: 52, victories: 2},
+        {name: 'Bob', points: 120, victories: 7},
+        {name: 'Carlos', points: 125, victories: 3},
+        {name: 'Daniel', points: 151, victories: 2},
+        {name: 'Eder', points: 110, victories: 1}
+    ]
+*/
 
 
 export default function Ranking() {
@@ -16,27 +25,29 @@ export default function Ranking() {
     const route = useRoute();
 
     const [loading, setLoading] = useState(false)
+    const [personasCount, setPersonasCount] = useState(0)
     const [filter, setFilter] = useState("victories")
-    const [personas, setPersonas] = useState([
-        {name: 'Alice', points: 52, victories: 2},
-        {name: 'Bob', points: 120, victories: 7},
-        {name: 'Carlos', points: 125, victories: 3},
-        {name: 'Daniel', points: 151, victories: 2},
-        {name: 'Eder', points: 110, victories: 1}
-    ])
+    const [personas, setPersonas] = useState([])
 
     async function loadRanking() {
         if(loading)
             return
 
-        //todo: revisar se precisa de mais alguma verificação aqui, de acordo com o fluxo final do app
+        if(personasCount > 0 && personas.length == personasCount)
+            return;
 
         setLoading(true)
 
-        const response = await api.get('ranking')
-        setPersonas([...personas, ...response.data])
+        const response = await api.get('torque/ranking')
+        setPersonas(response.data)
+        setPersonasCount(personas.length)
 
         setLoading(false)
+    }
+
+    function forceReloadData() {
+        setLoaded(false)
+        loadRanking()
     }
 
     useEffect(() => {
