@@ -17,9 +17,5 @@ api.use('/jogo', jogo)
 
 module.exports = api
 
-//TODO
-//Um arquivo que ajuda a compreender as respostas esperadas pelo Torque é o game/gameScripts/server/serverGetPost.cs
-
-//Prioridade 1: Sala, Persona, Jogo,
-//Prioridade 2: Pesquisas
-//Prioridade 3: Tutorial, Guloks
+//TODO:
+//Guloks, Aterfatos

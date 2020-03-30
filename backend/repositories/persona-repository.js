@@ -16,6 +16,10 @@ class PersonaRepository {
 	async add(persona) {
 		await persona.save()
 	}
+
+	async getAll() {
+		return await this.persona.findAll()
+	}
 }
 
 module.exports = new PersonaRepository()
