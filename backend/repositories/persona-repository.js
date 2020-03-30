@@ -17,10 +17,9 @@ class PersonaRepository {
 		await persona.save()
 	}
 
-	async getAll() {
-		return await this.persona.findAll()
+	async getAllForRanking() {
+		return await this.persona.findAll({attributes: ['name', 'games', 'victories', 'points', 'visionary', 'sweeper', 'trader', 'attacked', 'species']})
 	}
 }
 
 module.exports = new PersonaRepository()
-
