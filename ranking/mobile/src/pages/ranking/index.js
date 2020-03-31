@@ -5,6 +5,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import Leaderboard from 'react-native-leaderboard'
 
 import api from '../../services/api'
+import { getPatentByWins } from '../../models/Patents'
 
 import logoImg from '../../../assets/icon.png'
 import styles from './styles'
@@ -40,8 +41,11 @@ export default function Ranking() {
         setLoading(true)
 
         const response = await api.get('api/ranking')
-        setPersonas(response.data)
-        setPersonasCount(personas.length)
+        const personasWithPatents = setPatents(response.data)
+    
+        setPersonas(personasWithPatents)
+        setPersonasCount(personasWithPatents.length)
+        
 
         setLoading(false)
     }
@@ -50,14 +54,24 @@ export default function Ranking() {
         loadRanking()
     })
 
-    function navigateBack() {
-        navigation.goBack();
+    function setPatents(data) {
+        const newData = data.slice(0)
+        
+        for (let i = 0; i < data.length; i++) {
+            newData[i].name = getPatentByWins(newData[i].victories) + " " + newData[i].name
+        }
+
+        return newData
     }
 
     //possible filters: "victories" || "points" 
     function filterBy(fieldName) {
         setFilter(fieldName)
         setMasterKey(Math.random()) //force re-render (without it, the component will no re-sort the list)
+    }
+
+    function navigateBack() {
+        navigation.goBack();
     }
 
     return (
