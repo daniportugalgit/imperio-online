@@ -18,10 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    started_at: {
-      type: DataTypes.DATE
-    },
-    finished_at: {
+    finishedAt: {
       type: DataTypes.DATE
     },
     duration: {
