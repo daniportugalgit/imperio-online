@@ -10,7 +10,7 @@ const taxoAdapter = require('../../services/taxo-adapter')
 const parseParticipations = (query) => {
     let participations = query.idsPersona.slice(0, -1).split(';').map(id => { 
         return { 
-            personaId: id 
+            personaId: parseInt(id)
         }
     })
 
