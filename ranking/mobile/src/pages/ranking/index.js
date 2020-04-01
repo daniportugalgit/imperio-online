@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Feather } from '@expo/vector-icons'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
+import { ButtonGroup } from 'react-native-elements';
 import Leaderboard from 'react-native-leaderboard'
 
 import api from '../../services/api'
@@ -30,6 +31,7 @@ export default function Ranking() {
     const [filter, setFilter] = useState("victories")
     const [masterKey, setMasterKey] = useState(0)
     const [personas, setPersonas] = useState([])
+    const [filterIndex, setFilterIndex] = useState(0)
 
     async function loadRanking() {
         if(loading)
@@ -45,7 +47,6 @@ export default function Ranking() {
     
         setPersonas(personasWithPatents)
         setPersonasCount(personasWithPatents.length)
-        
 
         setLoading(false)
     }
@@ -54,14 +55,33 @@ export default function Ranking() {
         loadRanking()
     })
 
+    function forceReload() {
+        if(loading)
+            return
+
+        setPersonasCount(0)
+        setPersonas([])
+        loadRanking();
+    }
+
     function setPatents(data) {
         const newData = data.slice(0)
         
         for (let i = 0; i < data.length; i++) {
             newData[i].name = getPatentByWins(newData[i].victories) + " " + newData[i].name
+            newData[i].iconUrl = "http://exchange.funpowerhouse.com/imperio-online/grad/grad" + newData[i].victories + ".png"
         }
 
         return newData
+    }
+
+    function changeFilterTo(index) {
+        setFilterIndex(index)
+
+        switch(index) {
+            case 0: filterBy("victories"); break;
+            case 1: filterBy("points"); break;
+        }
     }
 
     //possible filters: "victories" || "points" 
@@ -74,33 +94,53 @@ export default function Ranking() {
         navigation.goBack();
     }
 
+    function getVictoriesBtnComponent() {
+        return (<View style={styles.testButtonGroup}>
+            <Feather name="award" size={16} color="#FFF" />
+            <Text style={styles.filterButtonText}>Vitórias</Text>
+        </View>)
+    }
+
+    function getScoreBtnComponent() {
+        return (<View style={styles.testButtonGroup}>
+            <Feather name="star" size={16} color="#FFF" />
+            <Text style={styles.filterButtonText}>Pontos</Text>
+        </View>)
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity
-                    style={styles.filterButton}
-                    onPress={() => filterBy("victories")}>
-
-                    <Feather name="award" size={16} color="#FFF" />
-                    <Text style={styles.filterButtonText}>Vitórias</Text>
-                </TouchableOpacity>
-
-                <Image source={logoImg} style={styles.logo}/>
-
-                <TouchableOpacity
-                    style={styles.filterButton}
-                    onPress={() => filterBy("points")}>
-
-                    <Feather name="star" size={16} color="#FFF" />
-                    <Text style={styles.filterButtonText}>Pontos</Text>
+                <TouchableOpacity onPress={forceReload}>
+                    <Image source={logoImg} style={styles.logo}/>
                 </TouchableOpacity>
             </View>
+
+            <View>
+                <ButtonGroup
+                    onPress={(x) => changeFilterTo(x)}
+                    selectedIndex={filterIndex}
+                    buttons={[{element: getVictoriesBtnComponent},{element: getScoreBtnComponent}]}
+                    containerStyle={styles.buttonGroup}
+                    textStyle={styles.btnGroupTextStyle}
+                    selectedButtonStyle={styles.selectedButtonStyle}
+                    />
+            </View>
+
             <Leaderboard 
                 key={masterKey}
                 data={personas} 
                 sortBy={filter}
+                icon="iconUrl"
+                oddRowColor="#f2f5f7"
+                evenRowColor="#fff"
                 labelBy='name'/>
         </View>
     )
 
 }
+
+
+/*
+
+*/
