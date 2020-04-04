@@ -39,7 +39,10 @@ class AcademyService {
 
 		await persona.update({academy: researcher.academy, credits: persona.credits - credits})
 
-		metrics.investResearch.inc({min: min, pet: pet, ura: ura, credits: credits})
+		metrics.investResearch.inc({resource: "min"}, min || 0)
+		metrics.investResearch.inc({resource: "pet"}, pet || 0)
+		metrics.investResearch.inc({resource: "ura"}, ura || 0)
+		metrics.investResearch.inc({resource: "credits"}, credits || 0)
 	}
 }
 

@@ -16,7 +16,7 @@ const newMetrics = (name, labelNames) => {
   })
 }
 
-const investResearch = newMetrics('imperio_invest_research', ['min', 'pet', 'ura', 'credits'])
+const investResearch = newMetrics('imperio_invest_research', ['resource'])
 const endResearch = newMetrics('imperio_end_research', ['research'])
 const endGame = newMetrics('imperio_end_game')
 const login = newMetrics('imperio_login')
