@@ -18,6 +18,7 @@ services:
 
   prometheus-server:
     image: prom/prometheus
+    network_mode: host        
     ports:
       - 9090:9090
     expose:
@@ -27,6 +28,7 @@ services:
   
   grafana-ui:
     image: grafana/grafana
+    network_mode: host            
     ports:
       - 3000:3000
     environment:
