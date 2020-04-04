@@ -2,7 +2,7 @@
 
 const personaRepository = require('../repositories/persona-repository')
 const AcademyResearcher = require('./academy-researcher')
-const models = require('../models')
+const metrics = require("../utils/metrics")
 
 class AcademyService {
 	async startResearch(personaId, researchId, leaderId, credits) {
@@ -25,6 +25,8 @@ class AcademyService {
 		researcher.finish()
 
 		await persona.update({academy: researcher.academy, credits: persona.credits - credits})
+
+		metrics.endResearch.inc({research: researchId})
 	}
 
 	async investResearch(personaId, min, pet, ura, credits) {
@@ -36,6 +38,8 @@ class AcademyService {
 		researcher.invest(min, pet, ura)
 
 		await persona.update({academy: researcher.academy, credits: persona.credits - credits})
+
+		metrics.investResearch.inc({min: min, pet: pet, ura: ura, credits: credits})
 	}
 }
 

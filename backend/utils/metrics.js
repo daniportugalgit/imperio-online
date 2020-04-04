@@ -16,9 +16,9 @@ const newMetrics = (name, labelNames) => {
   })
 }
 
-const investedResearch = newMetrics('invested_research', ['min', 'pet', 'ura', 'credits'])
-const finishedResearch = newMetrics('finished_research', ['research'])
-const finishedGame = newMetrics('finished_game')
-const login = newMetrics('login')
+const investResearch = newMetrics('imperio_invest_research', ['min', 'pet', 'ura', 'credits'])
+const endResearch = newMetrics('imperio_end_research', ['research'])
+const endGame = newMetrics('imperio_end_game')
+const login = newMetrics('imperio_login')
 
-module.exports = { login, finishedResearch, finishedGame, middleware };
+module.exports = { login, investResearch, endResearch, endGame, middleware };

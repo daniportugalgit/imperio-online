@@ -1,6 +1,7 @@
 const gameRepository = require('../repositories/game-repository')
 const personaRepository = require('../repositories/persona-repository')
 const moment = require('moment')
+const metrics = require("../utils/metrics")
 const models = require('../models');
 
 class GameService {
@@ -35,6 +36,8 @@ class GameService {
 
 		await game.update({participations: participations, finishedAt: moment().subtract({hours: 3}), duration: duration, planetId: planetId})	
 
+		metrics.endGame.inc()
+		
 		return await this.createNextGame(game, personas)
 	}
 	
