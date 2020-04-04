@@ -33,8 +33,6 @@ services:
       - 3000:3000
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=secret
-    links:
-      - prometheus-server:prometheus    
     user: "500"
     volumes:
       - ./gfdata:/var/lib/grafana
