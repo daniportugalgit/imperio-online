@@ -1,0 +1,42 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  
+  external_labels:
+    monitor: 'prometheus-stack-monitor'
+  
+rule_files:
+  
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+ 
+    static_configs:
+      - targets: ['localhost:9090']
+ 
+  - job_name: 'machine-vm'
+ 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+ 
+    static_configs:
+      - targets: ['cadvisor:8080']
+
+
+  - job_name: 'imperio'
+ 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+ 
+    static_configs:
+      - targets: ['docker.for.mac.localhost:80']      
+     
+ 
+  - job_name: 'metrics-gateway'
+  
+    scrape_interval: 10s
+    scrape_timeout: 5s
+  
+    static_configs:
+      - targets: ['metrics-gateway:9091']

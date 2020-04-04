@@ -5,10 +5,13 @@ const config = require('./config')
   
 const app = express()
 
+const prometheus = require('./utils/metrics');
+
 app.get('/', (req, res) => {
     return res.send("Server online")
 })
 
+app.use(prometheus.middleware)
 app.use(express.json())
 app.use(parser.json())
 app.use(morgan('tiny'))

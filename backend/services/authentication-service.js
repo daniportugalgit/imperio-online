@@ -1,4 +1,5 @@
 const userRepository = require("../repositories/user-repository")
+const metrics = require("../utils/metrics")
 
 class AuthenticationService {
 	async login(username, password) {
@@ -10,6 +11,7 @@ class AuthenticationService {
 		if (user.password != password)
 			return null
 
+		metrics.login.inc()
 		user.password = null
 		return user
 	}

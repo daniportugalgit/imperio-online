@@ -1,17 +1,39 @@
 version: '3.3'
 services:
-  imperio:
-    image: imperio-backend
-    restart: always
+  # imperio:
+  #   image: imperio-backend
+  #   restart: always
 
-    environment:
-      - IMPERIO_SERVER_LISTEN_PORT=8000
-      - IMPERIO_DATABASE_HOST=imperio-database.ck81rohysnal.us-east-2.rds.amazonaws.com
-      - IMPERIO_DATABASE_NAME=imperio
-      - IMPERIO_DATABASE_USER=admin
-      - IMPERIO_DATABASE_PASSWORD=Imperio123!
-      - IMPERIO_DATABASE_CONSOLE_OUTPUT=false
+  #   environment:
+  #     - IMPERIO_SERVER_LISTEN_PORT=8000
+  #     - IMPERIO_DATABASE_HOST=imperio-database.ck81rohysnal.us-east-2.rds.amazonaws.com
+  #     - IMPERIO_DATABASE_NAME=imperio
+  #     - IMPERIO_DATABASE_USER=admin
+  #     - IMPERIO_DATABASE_PASSWORD=Imperio123!
+  #     - IMPERIO_DATABASE_CONSOLE_OUTPUT=false
+  #   ports:
+  #     - '80:8000'
+  #   expose:
+  #     - '80'
+
+  prometheus-server:
+    image: prom/prometheus
     ports:
-      - '80:8000'
+      - 9090:9090
     expose:
-      - '80'
+      - 9090      
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+  
+  grafana-ui:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=secret
+    links:
+      - prometheus-server:prometheus    
+    volumes:
+      - /var/lib/grafana:/var/lib/grafana    
+      #- path/to-your/grafana.ini:/etc/grafana/grafana.ini
+      - ./monotoring/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml      

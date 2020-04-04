@@ -1,1 +1,1 @@
-git pull https://acdtunes:9b59f48ae509335b4645e0f76dab005a42defb6c@github.com/daniportugalgit/imperio-online.git master && docker build . --tag imperio-backend:latest
+git pull https://acdtunes:9b59f48ae509335b4645e0f76dab005a42defb6c@github.com/daniportugalgit/imperio-online.git master &&  docker build . --tag imperio-backend:latest
