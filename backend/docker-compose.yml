@@ -34,5 +34,7 @@ services:
     links:
       - prometheus-server:prometheus    
     volumes:
-      - /var/lib/grafana:/var/lib/grafana    
+      - grafana-storage:/var/lib/grafana    
       #- ./monotoring/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml      
+volumes:
+  grafana-storage:
