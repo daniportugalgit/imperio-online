@@ -1,4 +1,6 @@
 version: '3.3'
+volumes:
+    prometheus_data: {}
 services:
   imperio:
     image: imperio-backend
@@ -24,6 +26,8 @@ services:
     expose:
       - 9090      
     volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
   
   grafana-ui:
