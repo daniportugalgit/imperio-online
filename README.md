@@ -1,5 +1,7 @@
 Império - Versão Alpha
 
+*** Este projeto foi descontinuado; para rodá-lo por completo é necessário possuir uma versão paga da engine Torque2D e recompilar. Caso tenha interesse em testar o game, entre em contato (daniportugal@gmail.com) para que eu suba um servidor pronto. ***
+
 SOBRE O JOGO:
 O jogo IMPÉRIO foi criado no início dos anos 2000 com o objetivo de promover uma nova abordagem aos jogos de guerra e estratégia para tabuleiro. Nesta nova geração de jogos, a guerra é apenas uma opção entre muitas outras. A negociação e a interação entre os participantes é o foco, de forma que o perfil de cada jogador influencia diretamente o resultado das partidas. 
 
@@ -7,10 +9,6 @@ Na versão eletrônica é possível acumular vitórias e desenvolver seus exérc
 
 Use toda sua estratégia para dominar seus adversários e fazer alianças com parceiros promissores. Mude de lado ou mantenha sua palavra; seja um bom comerciante ou decrete moratórias; torne-se um respeitado diplomata ou um odioso facínora.
 A escolha é sua. 
-
-Divirta-se!!
-
-
 
 
 CRÉDITOS:
