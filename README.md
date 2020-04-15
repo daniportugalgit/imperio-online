@@ -17,21 +17,28 @@ Criação, Programação, Design Gráfico, Efeitos Sonoros e Produção:
 Daniel Portugal 
 
 Banco de Dados e Site:
+
 Taxonomia Digital (Andrés Camacho e Flávio Medeiros)
 
 Música:
-Johnny Passos
-Caíque Jorge
+
+Johnny Passos e Caíque Jorge
 
 Colaboradores:
 Alex Portugal
+
 Bruno Baggio
+
 Carolina Monteiro
+
 Elise Lisboa
+
 Fernanda Monteiro
 
 Agradecimentos:
+
 Garage Games
+
 Sam Bacsa/netMercs Group
 
 
